@@ -7,13 +7,16 @@ library.add(faTrashRestore, faListAlt);
 
 function App() {
   const [values, setValues] = useState([[], [], [0]]);
+  // premier tableau pour ce que l'utilisateur entre dans l'input
+  // second tableau pour push la task de l'utilisateur
+  // dernier tableau pour la vérification si l'utilisateur à coché la task ou non
   const handleChange = (event) => {
     const value = event.target.value;
     const newTab = [...values];
     newTab[0].push(value);
     setValues(newTab);
   };
-  if (values[3] === 0) {
+  if (values[2] === 0) {
     document.body.style.background = "black";
     document.body.style.color = "white";
   } else {
@@ -59,6 +62,7 @@ function App() {
             // }
             return (
               <li key={index}>
+                {/* Cette input permet de checker si l'utilisateur a accompli sa task ou non */}
                 <input
                   type="checkbox"
                   onClick={() => {
@@ -92,16 +96,16 @@ function App() {
         <button
           onClick={() => {
             const newTab = [...values];
-            console.log(newTab[3]);
-            if (newTab[3] === 0) {
-              newTab[3] = 1;
+            console.log(newTab[2]);
+            if (newTab[2] === 0) {
+              newTab[2] = 1;
             } else {
-              newTab[3] = 0;
+              newTab[2] = 0;
             }
             setValues(newTab);
           }}
         >
-          {values[3] === 0 ? "DARKMODE" : "LIGHTMODE"}
+          {values[2] === 0 ? "DARKMODE" : "LIGHTMODE"}
         </button>
         <span>
           Made at{" "}
