@@ -105,7 +105,7 @@ function App() {
             setValues(newTab);
           }}
         >
-          {values[2] === 0 ? "DARKMODE" : "LIGHTMODE"}
+          {values[2] === 0 ? "WANT LIGHTMODE ?" : "WANT DARKMODE ?"}
         </button>
         <span>
           Made at{" "}
