@@ -9,6 +9,8 @@ main {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
 }
 main input {
   border: 1px solid blueviolet;
@@ -17,4 +19,10 @@ main input {
   padding: 10px;
   padding-right: 100px;
   outline: none;
+}
+main ul {
+  display: flex;
+  flex-direction: column-reverse;
+  border: 1px solid black;
+  margin-bottom: 100px;
 }
