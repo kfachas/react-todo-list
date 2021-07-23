@@ -67,11 +67,12 @@ main ul li button {
 footer {
   position: absolute;
   bottom: 0px;
-  left: 45%;
+  left: 40%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 footer button {
   background-color: blueviolet;
@@ -85,4 +86,20 @@ footer button {
 
 footer button:hover {
   background-color: rgb(147, 65, 223);
+}
+
+footer a {
+  font-weight: bold;
+}
+
+footer a:visited {
+  color: inherit;
+}
+
+footer a:hover {
+  opacity: 0.8;
+}
+
+footer a:link {
+  text-decoration: none;
 }

@@ -103,6 +103,17 @@ function App() {
         >
           {values[3] === 0 ? "DARKMODE" : "LIGHTMODE"}
         </button>
+        <span>
+          Made at{" "}
+          <a href="https://lereacteur.io" target="_blank">
+            Le Reacteur
+          </a>{" "}
+          by{" "}
+          <a href="https://github.com/kfachas" target="_blank">
+            Kevin Fachas
+          </a>{" "}
+          - 2021
+        </span>
       </footer>
     </div>
   );
