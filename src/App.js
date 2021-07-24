@@ -11,15 +11,14 @@ function App() {
     tasks: [],
     darkmonde: false,
   });
-  // premier tableau pour ce que l'utilisateur entre dans l'input
-  // second tableau pour push la task de l'utilisateur
-  // dernier tableau pour la vérification si l'utilisateur à coché la task ou non
+
   const handleChange = (event) => {
     const value = event.target.value;
     const newTab = { ...values };
     newTab.inputValue = value;
     setValues(newTab);
   };
+
   if (values.darkmode === false) {
     document.body.style.background = "black";
     document.body.style.color = "white";
@@ -46,7 +45,6 @@ function App() {
             onClick={() => {
               const newTab = { ...values };
               newTab.tasks.push({ task: newTab.inputValue, isDone: 0 });
-              console.log(newTab.tasks);
               setValues(newTab);
             }}
           >
@@ -55,11 +53,11 @@ function App() {
         </div>
         <ul>
           {values.tasks.map((elem, index) => {
-            // const newTab = [...values];
-            // if (newTab[1][index].isDone === 1) {
-            //   newTab[1].splice(index, 1);
-            //   newTab[1].unshift(elem);
-            // }
+            const newTab = { ...values };
+            if (newTab.tasks[index].isDone === 1) {
+              newTab.tasks.splice(index, 1);
+              newTab.tasks.unshift(elem);
+            }
             return (
               <li key={index}>
                 {/* Cette input permet de checker si l'utilisateur a accompli sa task ou non */}
@@ -111,11 +109,11 @@ function App() {
         </button>
         <span>
           Made at{" "}
-          <a href="https://lereacteur.io" target="_blank">
+          <a href="https://lereacteur.io" target="_blank" rel="noreferrer">
             Le Reacteur
           </a>{" "}
           by{" "}
-          <a href="https://github.com/kfachas" target="_blank">
+          <a href="https://github.com/kfachas" target="_blank" rel="noreferrer">
             Kevin Fachas
           </a>{" "}
           - 2021
