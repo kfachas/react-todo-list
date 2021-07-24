@@ -94,6 +94,7 @@ footer button:hover {
 
 footer a {
   font-weight: bold;
+  color: inherit;
 }
 
 footer a:visited {

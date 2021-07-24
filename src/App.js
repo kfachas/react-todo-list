@@ -6,17 +6,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 library.add(faTrashRestore, faListAlt);
 
 function App() {
-  const [values, setValues] = useState([[], [], [0]]);
+  const [values, setValues] = useState({
+    inputValue: "",
+    tasks: [],
+    darkmonde: false,
+  });
   // premier tableau pour ce que l'utilisateur entre dans l'input
   // second tableau pour push la task de l'utilisateur
   // dernier tableau pour la vérification si l'utilisateur à coché la task ou non
   const handleChange = (event) => {
     const value = event.target.value;
-    const newTab = [...values];
-    newTab[0].push(value);
+    const newTab = { ...values };
+    newTab.inputValue = value;
     setValues(newTab);
   };
-  if (values[2] === 0) {
+  if (values.darkmode === false) {
     document.body.style.background = "black";
     document.body.style.color = "white";
   } else {
@@ -40,21 +44,17 @@ function App() {
           {/* Ce bouton permet de rajouter la task dans une liste*/}
           <button
             onClick={() => {
-              let i = 0;
-              for (; i <= values[0].length; i++) {
-                if (values[0].length === i) {
-                  const newTab = [...values];
-                  newTab[1].push({ task: newTab[0][i - 1], isDone: 0 });
-                  setValues(newTab);
-                }
-              }
+              const newTab = { ...values };
+              newTab.tasks.push({ task: newTab.inputValue, isDone: 0 });
+              console.log(newTab.tasks);
+              setValues(newTab);
             }}
           >
             Add task
           </button>
         </div>
         <ul>
-          {values[1].map((elem, index) => {
+          {values.tasks.map((elem, index) => {
             // const newTab = [...values];
             // if (newTab[1][index].isDone === 1) {
             //   newTab[1].splice(index, 1);
@@ -66,24 +66,27 @@ function App() {
                 <input
                   type="checkbox"
                   onClick={() => {
-                    const newTab = [...values];
-                    if (newTab[1][index].isDone === 0) {
-                      newTab[1][index].isDone = 1;
+                    const newTab = { ...values };
+                    if (newTab.tasks[index].isDone === 0) {
+                      newTab.tasks[index].isDone = 1;
                     } else {
-                      newTab[1][index].isDone = 0;
+                      newTab.tasks[index].isDone = 0;
                     }
                     setValues(newTab);
                   }}
                 ></input>
-                <span className={values[1][index].isDone === 1 ? "line" : ""}>
+                <span
+                  className={values.tasks[index].isDone === 1 ? "line" : ""}
+                >
                   {elem.task}
                 </span>
                 <FontAwesomeIcon
                   icon="trash-restore"
                   color="blueviolet"
+                  style={{ cursor: "pointer" }}
                   onClick={() => {
-                    const newTab = [...values];
-                    newTab[1].splice(index, 1);
+                    const newTab = { ...values };
+                    newTab.tasks.splice(index, 1);
                     setValues(newTab);
                   }}
                 ></FontAwesomeIcon>
@@ -95,17 +98,16 @@ function App() {
       <footer>
         <button
           onClick={() => {
-            const newTab = [...values];
-            console.log(newTab[2]);
-            if (newTab[2] === 0) {
-              newTab[2] = 1;
+            const newTab = { ...values };
+            if (newTab.darkmode === false) {
+              newTab.darkmode = true;
             } else {
-              newTab[2] = 0;
+              newTab.darkmode = false;
             }
             setValues(newTab);
           }}
         >
-          {values[2] === 0 ? "WANT LIGHTMODE ?" : "WANT DARKMODE ?"}
+          {values.darkmode === false ? "WANT LIGHTMODE ?" : "WANT DARKMODE ?"}
         </button>
         <span>
           Made at{" "}
