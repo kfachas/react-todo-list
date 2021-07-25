@@ -86,6 +86,29 @@ footer {
   align-items: center;
   flex-direction: column;
 }
+
+footer button {
+  display: flex;
+}
+
+.circlered {
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-fUPheDqURkDX3i7ngiZrJu96EQrOf0Mfdw&usqp=CAU");
+  background-position: center;
+  background-size: contain;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.circleblue {
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcP48FRUDYRhuOlK4xelxzVblbsRrV3ZCNOg&usqp=CAU");
+  background-position: center;
+  background-size: contain;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
 footer button {
   background-color: blueviolet;
   padding: 5px;
@@ -94,6 +117,7 @@ footer button {
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
+  width: 100px;
 }
 
 footer button:hover {

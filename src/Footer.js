@@ -1,4 +1,4 @@
-const Footer = ({ values, setValues }) => {
+const Footer = ({ values, setValues, lightmode }) => {
   return (
     <footer>
       <button
@@ -11,8 +11,12 @@ const Footer = ({ values, setValues }) => {
           }
           setValues(newTab);
         }}
+        style={{
+          justifyContent: lightmode === true ? "flex-start" : "flex-end",
+        }}
       >
-        {values.lightmode === false ? "WANT LIGHTMODE ?" : "WANT DARKMODE ?"}
+        <div className={lightmode === true ? "circleblue" : "circlered"}></div>
+        {/* {values.lightmode === false ? "WANT LIGHTMODE ?" : "WANT DARKMODE ?"} */}
       </button>
       <span>
         Made at{" "}

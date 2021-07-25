@@ -27,7 +27,11 @@ function App() {
     <div>
       <Header />
       <Main values={values} setValues={setValues} />
-      <Footer values={values} setValues={setValues} />
+      <Footer
+        values={values}
+        setValues={setValues}
+        lightmode={values.lightmode}
+      />
     </div>
   );
 }
