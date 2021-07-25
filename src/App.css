@@ -147,9 +147,6 @@ footer a:link {
 
 @media (max-width: 478px) {
   main {
-    width: 400px;
-  }
-  main ul {
-    width: 150px;
+    width: 200px;
   }
 }
