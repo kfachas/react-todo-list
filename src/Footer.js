@@ -16,7 +16,6 @@ const Footer = ({ values, setValues, lightmode }) => {
         }}
       >
         <div className={lightmode === true ? "circleblue" : "circlered"}></div>
-        {/* {values.lightmode === false ? "WANT LIGHTMODE ?" : "WANT DARKMODE ?"} */}
       </button>
       <span>
         Made at{" "}

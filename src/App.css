@@ -58,6 +58,10 @@ main ul li button {
   width: 30px;
 }
 
+.addTask {
+  margin-bottom: 150px;
+}
+
 .addTask button {
   background-color: blueviolet;
   color: white;
@@ -86,9 +90,9 @@ footer {
   align-items: center;
   flex-direction: column;
 }
-
 footer button {
   display: flex;
+  position: relative;
 }
 
 .circlered {

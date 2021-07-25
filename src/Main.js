@@ -7,13 +7,6 @@ const Main = ({ values, setValues }) => {
       <ul>
         {values.tasks.map((elem, index) => {
           const obj = { ...values };
-          if (elem.isDone === false) {
-            values.tasks.splice(index, 1);
-            values.tasks.unshift(elem);
-          } else {
-            values.tasks.splice(index, 1);
-            values.tasks.push(elem);
-          }
           return (
             <ToDoItem
               key={index}
