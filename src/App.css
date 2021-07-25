@@ -145,7 +145,7 @@ footer a:link {
   text-decoration: none;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 478px) {
   main {
     width: 400px;
   }
