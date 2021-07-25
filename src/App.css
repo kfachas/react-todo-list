@@ -17,6 +17,9 @@ header > * {
 
 main {
   max-width: 1080px;
+  height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -32,9 +35,12 @@ main input {
   outline: none;
 }
 main ul {
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
   display: flex;
-  flex-direction: column-reverse;
-  border: 1px solid black;
+  flex-direction: column;
   margin-bottom: 100px;
 }
 
@@ -68,10 +74,12 @@ main ul li button {
   text-decoration: line-through;
 }
 
+/* Footer */
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
-  left: 40%;
+  left: 0px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
