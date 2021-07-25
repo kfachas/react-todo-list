@@ -1,5 +1,5 @@
 const SearchTask = () => {
-  return <div>SearchTask</div>;
+  return <div></div>;
 };
 
 export default SearchTask;
