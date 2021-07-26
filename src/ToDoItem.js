@@ -2,17 +2,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ToDoItem = ({ index, values, setValues, elem }) => {
   return (
     <li>
-      {/* Cette input permet de checker si l'utilisateur a accompli sa task ou non */}
       <input
         type="checkbox"
         onClick={() => {
+          const obj = { ...values };
           if (elem.isDone === false) {
-            values.tasks[index].isDone = true;
+            obj.tasks[index].isDone = true;
+            obj.tasks.splice(index, 1);
+            obj.tasks.push(elem);
           } else {
-            values.tasks[index].isDone = false;
+            obj.tasks[index].isDone = false;
+            obj.tasks.splice(index, 1);
+            obj.tasks.unshift(elem);
           }
-          setValues(values);
+          setValues(obj);
         }}
+        checked={values.tasks[index].isDone}
       ></input>
       <span className={elem.isDone === true ? "line" : ""}>{elem.task}</span>
       <FontAwesomeIcon

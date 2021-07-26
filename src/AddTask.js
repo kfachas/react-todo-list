@@ -7,9 +7,7 @@ const AddTask = ({ values, setValues }) => {
   };
   return (
     <div className="addTask">
-      {/* Cette input permet de récuperer la task écrite */}
       <input placeholder="new task" type="text" onChange={handleChange}></input>
-      {/* Ce bouton permet de rajouter la task dans une liste*/}
       <button
         onClick={() => {
           const obj = { ...values };

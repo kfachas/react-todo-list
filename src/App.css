@@ -148,13 +148,12 @@ footer a:link {
 @media (max-width: 478px) {
   main {
     width: 300px;
-    margin: 0 10px;
   }
   main ul {
     width: 300px;
-    margin: 0 10px;
   }
-  main ul li {
-    margin: 0 5px;
+  .addTask {
+    display: flex;
+    flex-direction: column;
   }
 }

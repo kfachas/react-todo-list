@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState } from "react";
 import Header from "./Header";
-import SearchTask from "./SearchTask";
 import Main from "./Main";
 import Footer from "./Footer";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -25,7 +24,6 @@ function App() {
   return (
     <div>
       <Header />
-      <SearchTask />
       <Main values={values} setValues={setValues} />
       <Footer
         values={values}
